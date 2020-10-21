@@ -1,0 +1,19 @@
+[Unit]
+Description=Cover Bot
+After=network.target
+
+[Service]
+User=igor
+Group=igor
+
+WorkingDirectory=/home/igor2
+Environment="PYTHONPATH=/home/igor2"
+ExecStart=/home/igor2/botMeet2/.venv/bin/python /home/igor2/botMeet/kgtaMeetBot.py
+
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+
+# sudo cp /home/igor/botMeet/vkBot.service /etc/systemd/system/vkBot.service
